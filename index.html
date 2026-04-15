@@ -5,11 +5,13 @@
   <title>GDES Explorable</title>
 
   <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div id="title-banner">
-    <h1>Evolution of Script|</h1>
+    <h1><span id="typed-title"></span><span class="cursor">|</span></h1>
+    <p id="script-label">English</p>
   </div>
 
   <div id="introduction">
@@ -21,19 +23,31 @@
     </p>
     <div class="introduction-stages">
       <div class="introduction-stage">
-        <div class="introduction-stage-img"></div>
+        <div class="introduction-stage-img" id="origins-icon">
+          <span>𒀭</span>
+          <span>𓂀</span>
+        </div>
         <div class="introduction-stage-title">Origins of Script</div>
       </div>
       <div class="introduction-stage">
-        <div class="introduction-stage-img"></div>
+        <div class="introduction-stage-img" id="calligraphy-icon">
+          <span>𝒜</span>
+          <span>ع</span>
+        </div>
         <div class="introduction-stage-title">Cursive and Calligraphy</div>
       </div>
       <div class="introduction-stage">
-        <div class="introduction-stage-img"></div>
+        <div class="introduction-stage-img" id="print-icon">
+          <span>𝔄</span>
+          <span>𝔞</span>
+        </div>
         <div class="introduction-stage-title">The Print Revolution</div>
       </div>
       <div class="introduction-stage">
-        <div class="introduction-stage-img"></div>
+        <div class="introduction-stage-img" id="digital-icon">
+          <span>A</span>
+          <span>a</span>
+        </div>
         <div class="introduction-stage-title">Digital Type</div>
       </div>
     </div>
@@ -66,7 +80,7 @@
         <p>
           Clay tokens came in different 3-dimensional shapes such as cones, spheres, cylinders, disks, and more. A clay
           token of a particular shape represented one kind of good, and one clay token represented one count of that
-          good. Clay ‘envelopes’ encasing tokens would be used to maintain accuracy in tracking transactions and debt.
+          good. Clay 'envelopes' encasing tokens would be used to maintain accuracy in tracking transactions and debt.
           Markings inscribed on the outside of the envelope authenticated its contents.
         </p>
         <p>
@@ -88,8 +102,8 @@
       </div>
 
       <div class="cuneiform-images">
-        <div class="cuneiform-image"></div>
-        <div class="cuneiform-image"></div>
+        <div class="cuneiform-image"><img src="images/clay-tokens.png" alt="Clay tokens"></div>
+        <div class="cuneiform-image"><img src="images/cuneiform.png" alt="Cuneiform tablet"></div>
       </div>
     </div>
 
@@ -116,7 +130,55 @@
       </p>
     </div>
   </div>
-  </div>
+
+  <script>
+    const scripts = [
+      { text: "Evolution of Script",              label: "English" },
+      { text: "Εξέλιξη Αρχαίας Γραφής",          label: "Ancient Greek" },
+      { text: "التطور الكتابي المبكر",            label: "Arabic" },
+      { text: "早期文字的演变",                    label: "Chinese" },
+      { text: "初期文字の進化",                    label: "Japanese" },
+      { text: "초기 문자의 진화",                  label: "Korean" },
+      { text: "ప్రారంభ లిపి పరిణామం",            label: "Telugu" },
+      { text: "ஆரம்பகால எழுத்தின் பரிணாமம்",     label: "Tamil" },
+      { text: "ആദ്യകാല ലിപിയുടെ പരിണാമം",        label: "Malayalam" },
+      { text: "ಆರಂಭಿಕ ಲಿಪಿಯ ವಿಕಾಸ",              label: "Kannada" },
+    ];
+
+    const target = document.getElementById("typed-title");
+    const label  = document.getElementById("script-label");
+
+    let current  = 0;
+    let i        = 0;
+    let deleting = false;
+
+    function tick() {
+      const { text } = scripts[current];
+
+      if (!deleting) {
+        i++;
+        target.textContent = text.slice(0, i);
+        if (i === text.length) {
+          setTimeout(() => { deleting = true; tick(); }, 2200);
+        } else {
+          setTimeout(tick, 80);
+        }
+      } else {
+        i--;
+        target.textContent = text.slice(0, i);
+        if (i === 0) {
+          deleting = false;
+          current  = (current + 1) % scripts.length;
+          label.textContent = scripts[current].label;
+          setTimeout(tick, 400);
+        } else {
+          setTimeout(tick, 40);
+        }
+      }
+    }
+
+    tick();
+  </script>
 </body>
 
 </html>
