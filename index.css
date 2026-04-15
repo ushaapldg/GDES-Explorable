@@ -31,6 +31,25 @@ h1 {
     font-size: 4em;
 }
 
+.cursor {
+    animation: blink 0.7s step-end infinite;
+}
+
+#script-label {
+    margin: 0;
+    font-family: Inter;
+    font-weight: 200;
+    font-size: 0.9em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 #introduction {
     display: flex;
     flex-direction: column;
@@ -58,14 +77,87 @@ h1 {
 }
 
 .introduction-stage-img {
-    background-color: lightgoldenrodyellow;
-
     margin: 15px;
 
     border-radius: 100px;
 
     height: 200px;
     width: 200px;
+}
+
+#digital-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 5em;
+}
+
+#print-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    font-size: 4.5em;
+    padding-top: 15px;
+}
+
+#origins-icon {
+    position: relative;
+    font-size: 4.5em;
+    overflow: hidden;
+}
+
+#origins-icon::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 283px;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#calligraphy-icon {
+    position: relative;
+    font-size: 4.5em;
+    overflow: hidden;
+}
+
+#calligraphy-icon::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 283px;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#calligraphy-icon span:first-child {
+    position: absolute;
+    top: 22px;
+    left: 28px;
+}
+
+#calligraphy-icon span:last-child {
+    position: absolute;
+    bottom: 22px;
+    right: 28px;
+}
+
+#origins-icon span:first-child {
+    position: absolute;
+    top: 22px;
+    left: 28px;
+}
+
+#origins-icon span:last-child {
+    position: absolute;
+    bottom: 22px;
+    right: 28px;
 }
 
 .introduction-stage-title {
@@ -117,10 +209,16 @@ h1 {
 }
 
 .cuneiform-image {
-    background-color:  lightgoldenrodyellow;
     width: 200px;
     height: 200px;
     margin: 10px;
+    overflow: hidden;
+}
+
+.cuneiform-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .cuneiform-interactive {
