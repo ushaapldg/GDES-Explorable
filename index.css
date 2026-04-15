@@ -1,53 +1,138 @@
+@font-face {
+    font-family: Inter;
+    src: url(fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+    font-family: Cambo;
+    src: url(fonts/Cambo/Cambo-Regular.ttf);
+}
+
 body {
     margin: 0;
 }
 
 #title-banner {
-    background-color: lightblue;
+    background-color: rgb(57, 57, 57);
 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    height: 600px;
+    height: 250px;
+
+    padding: 50px;
+
+    color: white;
 }
 
 h1 {
     margin: 0;
 
-    font-size: 3em;
+    font-size: 4em;
 }
 
 #introduction {
-    background-color: lightcoral;
-
     display: flex;
     flex-direction: column;
 
     padding: 50px 150px;
+
+    font-family: Inter;
+    font-weight: 200;
+    text-align: center;
 }
 
-p {
+#introduction p {
     margin: 0;
+    padding: 20px;
 
     font-size: 1.2em;
 }
 
-#origins-of-script {
-    background-color: lightblue;
+.introduction-stages {
+    margin: 30px;
 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.introduction-stage-img {
+    background-color: lightgoldenrodyellow;
+
+    margin: 15px;
+
+    border-radius: 100px;
+
+    height: 200px;
+    width: 200px;
+}
+
+.introduction-stage-title {
+    font-family: Cambo;
+}
+
+#origins-of-script {
+    background-color: rgb(57, 57, 57);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 50px;
+
+    color: white;
+}
+
+#origins-of-script p {
+    text-align: center;
+    font-family: Inter;
+    font-weight: 200;
+    font-size: 1.2em;
+}
+
+#origins-of-script-content {
     display: flex;
     flex-direction: column;
 
     padding: 50px 150px;
 }
 
-h2 {
-    font-size: 1.4em;
+.cuneiform-content {
+    display: flex;
+}
+
+.cuneiform-text {
+    margin-right: 250px;
+
+    font-family: Inter;
+    font-weight: 200;
+    font-size: 1.2em;
+    color:rgb(57, 57, 57)
+}
+
+.cuneiform-images {
+    display: flex;
+    flex-direction: column;
+}
+
+.cuneiform-image {
+    background-color:  lightgoldenrodyellow;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
 }
 
 .cuneiform-interactive {
     background-color: lightcoral;
 
-    
+    margin-top: 40px;
+
+    height: 400px;
+}
+
+.heiroglyphics-text {
+    font-family: Inter;
+    font-weight: 200;
+    font-size: 1.2em;
 }
