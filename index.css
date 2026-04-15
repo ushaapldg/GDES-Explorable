@@ -192,10 +192,12 @@ h1 {
 
 .cuneiform-content {
     display: flex;
+    gap: 50px;
+    align-items: stretch;
 }
 
 .cuneiform-text {
-    margin-right: 250px;
+    flex: 1;
 
     font-family: Inter;
     font-weight: 200;
@@ -206,13 +208,24 @@ h1 {
 .cuneiform-images {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
 }
 
 .cuneiform-image {
-    width: 200px;
-    height: 200px;
+    height: 325px;
     margin: 10px;
     overflow: hidden;
+}
+
+@media (max-width: 900px) {
+    .cuneiform-content {
+        flex-direction: column;
+    }
+
+    .cuneiform-image {
+        height: 220px;
+    }
 }
 
 .cuneiform-image img {
@@ -224,7 +237,7 @@ h1 {
 .cuneiform-interactive {
     background-color: lightcoral;
 
-    margin-top: 40px;
+    margin-top: 55px;
 
     height: 400px;
 }
