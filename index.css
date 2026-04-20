@@ -277,9 +277,22 @@ h1 {
 }
 
 .stylus-img-crop {
+    position: relative;
     height: 240px;
     overflow: hidden;
     flex-shrink: 0;
+}
+
+#wedge-indicator {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #9b1b1f;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+    transition: left 0.25s ease, top 0.25s ease;
+    pointer-events: none;
 }
 
 .reed-stylus-img {

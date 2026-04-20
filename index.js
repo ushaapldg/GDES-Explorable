@@ -63,6 +63,21 @@ tick();
 const clayCanvas      = document.getElementById('clay-tablet');
 const ctx             = clayCanvas.getContext('2d');
 const previewImg      = document.getElementById('stamp-preview');
+const wedgeIndicator  = document.getElementById('wedge-indicator');
+
+// Right-end of each red line in SVG coords (viewBox 1208×2010),
+// scaled to display size: 460px tall → factor 0.2289
+const wedgePositions = {
+  short:  { left: 165, top: 138 },
+  corner: { left: 155, top: 108 },
+  long:   { left: 173, top: 175 },
+};
+
+function updateWedgeIndicator() {
+  const pos = wedgePositions[selectedShape];
+  wedgeIndicator.style.left = pos.left + 'px';
+  wedgeIndicator.style.top  = pos.top  + 'px';
+}
 
 const shapeSrcs = {
   short:  'cuneiform-assets/short-cuneiform-glyph.png',
@@ -125,6 +140,7 @@ document.querySelectorAll('.shape-btn').forEach(btn => {
     btn.classList.add('selected');
     selectedShape = btn.dataset.shape;
     updatePreview();
+    updateWedgeIndicator();
   });
 });
 
@@ -149,4 +165,4 @@ clayCanvas.addEventListener('click', e => {
   stamp((e.clientX - rect.left) * scaleX, (e.clientY - rect.top) * scaleY);
 });
 
-window.addEventListener('load', () => { initCanvas(); updatePreview(); });
+window.addEventListener('load', () => { initCanvas(); updatePreview(); updateWedgeIndicator(); });
