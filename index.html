@@ -18,7 +18,7 @@
     <p>
       Over centuries, the form of script accross different writing systems has changed drastically. While we don't think
       much of the text we see everyday, the appearance of script has developed in response to advances in technology, people's needs, and the surrounding environment. Over four stages, the design of script has evolved from serving the basic
-      need to document language to becoming a form of creative expression.
+      need of documenting language to becoming a form of creative expression.
     </p>
     <div class="introduction-stages">
       <div class="introduction-stage">
@@ -107,7 +107,41 @@
     </div>
 
     <div class="cuneiform-interactive">
-      Write your own cuneiform
+      <div class="interactive-title">Write Your Own Cuneiform</div>
+      <div class="interactive-subtitle">Select a wedge shape, then click the tablet to inscribe marks</div>
+      <div class="interactive-body">
+
+        <div class="stylus-display">
+          <div class="stylus-img-wrapper">
+            <div class="stylus-img-crop">
+              <img class="reed-stylus-img" src="cuneiform-assets/reed-stylus.png" alt="Reed stylus">
+            </div>
+            <span class="stylus-label">Reed Stylus</span>
+          </div>
+          <div class="shape-picker">
+            <button class="shape-btn selected" data-shape="corner" title="Corner wedge">
+              <img src="cuneiform-assets/corner-wedge-cuneiform.png" alt="Corner wedge">
+            </button>
+            <button class="shape-btn" data-shape="short"  title="Short wedge">
+              <img src="cuneiform-assets/short-cuneiform-glyph.png"  alt="Short wedge">
+            </button>
+            <button class="shape-btn" data-shape="long"   title="Long wedge">
+              <img src="cuneiform-assets/long-cuneiform-glyph.png"   alt="Long wedge">
+            </button>
+          </div>
+        </div>
+
+        <div class="tablet-area">
+          <div class="tablet-actions">
+            <img id="stamp-preview" src="cuneiform-assets/corner-wedge-cuneiform.png" alt="Current stamp">
+            <button class="rotate-btn" id="rotate-ccw" title="Rotate left">↺</button>
+            <button class="rotate-btn" id="rotate-cw"  title="Rotate right">↻</button>
+            <button class="clear-btn"  id="clear-tablet">Clear</button>
+          </div>
+          <canvas id="clay-tablet"></canvas>
+        </div>
+
+      </div>
     </div>
 
     <div class="heiroglyphics-text">

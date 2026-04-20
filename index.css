@@ -63,9 +63,10 @@ h1 {
 
 #introduction p {
     margin: 0;
+    padding-top: 150px;
     padding: 20px;
 
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 .introduction-stages {
@@ -99,7 +100,6 @@ h1 {
     align-items: center;
     gap: 2px;
     font-size: 4.5em;
-    padding-top: 15px;
 }
 
 #origins-icon {
@@ -235,11 +235,182 @@ h1 {
 }
 
 .cuneiform-interactive {
-    background-color: lightcoral;
-
     margin-top: 55px;
+    padding: 40px 20px;
+    background-color: #F0E6D0;
+}
 
-    height: 400px;
+.interactive-title {
+    font-family: Cambo;
+    font-size: 1.5em;
+    color: rgb(57, 57, 57);
+    margin-bottom: 6px;
+}
+
+.interactive-subtitle {
+    font-family: Inter;
+    font-weight: 200;
+    font-size: 0.95em;
+    color: #7A6040;
+    margin-bottom: 28px;
+}
+
+.interactive-body {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.stylus-display {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-shrink: 0;
+    gap: 10px;
+}
+
+.stylus-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.stylus-img-crop {
+    height: 240px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.reed-stylus-img {
+    width: auto;
+    height: 460px;
+    display: block;
+    object-fit: contain;
+    object-position: top;
+    filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.25));
+}
+
+.stylus-label {
+    display: block;
+    margin-top: 8px;
+    font-family: Inter;
+    font-weight: 200;
+    font-size: 0.75em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8A6A30;
+    text-align: center;
+}
+
+.tablet-area {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+
+.shape-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 30px;
+}
+
+.shape-btn {
+    width: 46px;
+    height: 46px;
+    padding: 5px;
+    border: 2px solid #C4A060;
+    border-radius: 6px;
+    background: #E8D09A;
+    cursor: pointer;
+    opacity: 0.55;
+    transition: opacity 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.shape-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.shape-btn.selected {
+    opacity: 1;
+    border-color: #7A4E10;
+    background: #D4B060;
+}
+
+.shape-btn:hover:not(.selected) {
+    opacity: 0.85;
+}
+
+.tablet-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+#stamp-preview {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #E8D09A;
+    border: 2px solid #C4A060;
+    margin-bottom: 4px;
+    transition: transform 0.15s ease;
+}
+
+.rotate-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.15em;
+    border: 1px solid #B09050;
+    border-radius: 5px;
+    background: #E8D09A;
+    cursor: pointer;
+    color: #5A3810;
+    transition: background 0.15s;
+}
+
+.rotate-btn:hover {
+    background: #D4B060;
+}
+
+.clear-btn {
+    padding: 0 16px;
+    height: 36px;
+    border: 1px solid #B09050;
+    border-radius: 5px;
+    background: #E8D09A;
+    cursor: pointer;
+    font-family: Inter;
+    font-size: 0.85em;
+    color: #5A3810;
+    transition: background 0.15s;
+}
+
+.clear-btn:hover {
+    background: #D4B060;
+}
+
+#clay-tablet {
+    display: block;
+    width: 75%;
+    max-width: 620px;
+    margin-left: auto;
+    border-radius: 10px;
+    cursor: crosshair;
+    box-shadow:
+        inset 0 3px 10px rgba(80, 40, 0, 0.35),
+        inset 0 -2px 6px rgba(255, 220, 160, 0.3),
+        0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .heiroglyphics-text {
