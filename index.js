@@ -1,6 +1,5 @@
 const scripts = [
   { text: "Evolution of Script",              label: "English" },
-  { text: "Εξέλιξη Αρχαίας Γραφής",          label: "Ancient Greek" },
   { text: "التطور الكتابي المبكر",            label: "Arabic" },
   { text: "早期文字的演变",                    label: "Chinese" },
   { text: "初期文字の進化",                    label: "Japanese" },
