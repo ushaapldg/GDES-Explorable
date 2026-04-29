@@ -12,226 +12,211 @@ body {
     margin: 0;
 }
 
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#title-banner h1 {
+    font-size: 4em;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-family: Inter;
+    font-weight: 200;
+    font-size: 1.4em;
+    margin-top: 8px;
+}
+
+p {
+    font-family: Inter;
+    font-weight: 200;
+    font-size: 1.2em;
+}
+
+#crossfade-wrapper {
+    min-height: 2400px;
+}
+
 #title-banner {
     background-color: rgb(57, 57, 57);
 
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 250px;
-
-    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    height: 730px;
 
     color: white;
-}
-
-h1 {
-    margin: 0;
-
-    font-size: 4em;
-}
-
-.cursor {
-    animation: blink 0.7s step-end infinite;
-}
-
-#script-label {
-    margin: 0;
-    font-family: Inter;
-    font-weight: 200;
-    font-size: 0.9em;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+    text-align: center;
 }
 
 #introduction {
-    display: flex;
-    flex-direction: column;
+    position: sticky;
+    top: 0;
+    margin-top: -730px;
+    z-index: 2;
 
-    padding: 50px 150px;
-
-    font-family: Inter;
-    font-weight: 200;
-    text-align: center;
+    height: 730px;
+    opacity: 0;
+    clip-path: inset(6%);
+    transition: opacity 0.15s ease, clip-path 0.15s ease;
 }
 
-#introduction p {
+#introduction h1 {
     margin: 0;
-    padding-top: 150px;
-    padding: 20px;
+    padding: 30px 50px;
 
-    font-size: 1.5em;
+    font-size: 3em;
+
 }
 
-.introduction-stages {
-    margin: 30px;
+.introduction-contents {
+    height: 520px;
 
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    margin: 0 50px;
 }
 
-.introduction-stage-img {
-    margin: 15px;
-
-    border-radius: 100px;
-
-    height: 200px;
-    width: 200px;
-}
-
-#digital-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Press Start 2P', monospace;
-    font-size: 5em;
-}
-
-#print-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2px;
-    font-size: 4.5em;
-}
-
-#origins-icon {
-    position: relative;
-    font-size: 4.5em;
-    overflow: hidden;
-}
-
-#origins-icon::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 283px;
-    background-color: black;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-#calligraphy-icon {
-    position: relative;
-    font-size: 4.5em;
-    overflow: hidden;
-}
-
-#calligraphy-icon::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 283px;
-    background-color: black;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-#calligraphy-icon span:first-child {
-    position: absolute;
-    top: 22px;
-    left: 28px;
-}
-
-#calligraphy-icon span:last-child {
-    position: absolute;
-    bottom: 22px;
-    right: 28px;
-}
-
-#origins-icon span:first-child {
-    position: absolute;
-    top: 22px;
-    left: 28px;
-}
-
-#origins-icon span:last-child {
-    position: absolute;
-    bottom: 22px;
-    right: 28px;
-}
-
-.introduction-stage-title {
-    font-family: Cambo;
-}
-
-#origins-of-script {
-    background-color: rgb(57, 57, 57);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 50px;
-
-    color: white;
-}
-
-#origins-of-script p {
-    text-align: center;
-    font-family: Inter;
-    font-weight: 200;
-    font-size: 1.2em;
-}
-
-#origins-of-script-content {
-    display: flex;
-    flex-direction: column;
-
-    padding: 50px 150px;
-}
-
-.cuneiform-content {
-    display: flex;
-    gap: 50px;
-    align-items: stretch;
-}
-
-.cuneiform-text {
-    flex: 1;
-
-    font-family: Inter;
-    font-weight: 200;
-    font-size: 1.2em;
-    color:rgb(57, 57, 57)
-}
-
-.cuneiform-images {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: space-between;
-}
-
-.cuneiform-image {
-    height: 325px;
-    margin: 10px;
-    overflow: hidden;
-}
-
-@media (max-width: 900px) {
-    .cuneiform-content {
-        flex-direction: column;
-    }
-
-    .cuneiform-image {
-        height: 220px;
-    }
-}
-
-.cuneiform-image img {
-    width: 100%;
+.introduction-text {
+    width: 50%;
     height: 100%;
+
+    margin-right: 50px;
+}
+
+.introduction-img {
+    background-color: lightgray;
+    width: 50%;
+    height: 100%;
+}
+
+.introduction-img img {
     object-fit: cover;
+
+    width: 90%;
+    height: 100%;
+}
+
+
+
+#phase-one {
+    background-color: rgb(223, 223, 223);
+    display: flex;
+    flex-direction: column;
+
+    position: sticky;
+    top: 0;
+    margin-top: -730px;
+    z-index: 3;
+    opacity: 0;
+    clip-path: inset(6%);
+    transition: opacity 0.15s ease, clip-path 0.15s ease;
+}
+
+#phase-one h1 {
+    margin: 0;
+    padding: 30px 50px;
+
+    font-size: 3em;
+}
+
+.phase-one-contents {
+    height: 520px;
+
+    display: flex;
+    justify-content: space-between;
+    margin: 0 50px;
+}
+
+.phase-one-img {
+    width: 50%;
+    height: 100%;
+}
+
+.phase-one-text {
+    width: 50%;
+    height: 100%;
+}
+
+.phase-one-img img {
+    object-fit: cover;
+
+    width: 90%;
+    height: 100%;
+}
+
+.bullae-contents {
+    height: 520px;
+
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 50px;
+}
+
+.bullae-text {
+    width: 50%;
+    height: 100%;
+
+    margin-right: 50px;
+}
+
+.bullae-img {
+    background-color: lightgray;
+    width: 50%;
+    height: 100%;
+}
+
+.bullae-img img {
+    object-fit: cover;
+
+    width: 90%;
+    height: 100%;
+}
+
+
+
+#section-tag {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 40px;
+    height: 175px;
+    background-color: red;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Inter;
+    font-weight: 200;
+    font-size: 0.8em;
+    color: white;
+    letter-spacing: 0.05em;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    rotate: 180deg;
+}
+
+#section-tag.visible {
+    opacity: 1;
 }
 
 .cuneiform-interactive {
@@ -424,10 +409,4 @@ h1 {
         inset 0 3px 10px rgba(80, 40, 0, 0.35),
         inset 0 -2px 6px rgba(255, 220, 160, 0.3),
         0 3px 8px rgba(0, 0, 0, 0.2);
-}
-
-.heiroglyphics-text {
-    font-family: Inter;
-    font-weight: 200;
-    font-size: 1.2em;
 }
