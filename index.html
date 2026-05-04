@@ -36,6 +36,7 @@
   </div>
 
   <div id="phase-one">
+    <div class="phase-one-inner">
     <h1>Phase One: The need for symbols</h1>
     <div class="phase-one-contents">
       <div class="phase-one-img">
@@ -64,11 +65,119 @@
         <img src="">
       </div>
     </div>
+    </div><!-- end phase-one-inner -->
+  </div>
+
+  <div id="phase-two">
+    <h1>Phase Two: Pictography</h1>
+    <div class="phase-two-contents">
+      <div class="phase-two-text">
+        <p>
+          As people grew familiar with the impressions on the exterior of bullae, the need for clay tokens diminished. Tokens were replaced with small clay tablets that were used as receipts documenting transactions. Clay tablets were impressed with a stylus, typically one made of reed.
+        </p>
+        <p>
+          Each pictograph was made up of two parts: A symbol representing the good, and a numeral made up of wedge and circle impressions representing the count. Numerals were written in the base ten system, with a wedge representing ten, and a circle representing one. This marked the first time writing adopted plurality: Symbols were representative of more than one count.
+        </p>
+      </div>
+      <div class="phase-two-img">
+        <img src="">
+      </div>
+    </div>
+  </div>
+  <div id="phase-three">
+    <div class="phase-three-inner">
+    <h1>Phase Three: Logography</h1>
+    <div class="phase-three-contents">
+      <div class="phase-three-img">
+        <img src="">
+      </div>
+      <div class="phase-three-text">
+        <p>
+          The final phase of cuneiform’s development shifted cuneiform from representing items visually to representing sounds. This change was initiated under Sumerian statehood, where new regulations were placed requiring the names of vendors and consumers. 
+        </p>
+        <p>
+          Sumerians developed a system of logograms: unique signs representing words of the Sumerian language. The Sumerian language was monosyllabic; each word was only one syllable long. Names were represented as homophones by using a similar sounding word to represent each name. Names that were longer than one syllable were represented with a series of logograms.
+        </p>
+      </div>
+    </div>
+    <div class="logograms-contents">
+      <div class="logograms-text">
+        <p>
+          The written representation of spoken language over tangible goods led to cuneiform being used for purposes outside of accounting. As people grew familiar with logograms, their usage spread to suit other needs. Tomb inscriptions describing the names, titles, and gods of worship became a part of funerary traditions to ensure ‘eternal life’ of the deceased, according to Sumerian creed. Tomb inscriptions varied in detail, with some even including a plea for life after death.
+        </p>
+        <p>
+          By 2500BC and onward, Sumerian writing was a complex system of 400 logograms. As neighboring civilizations adopted cuneiform, phonograms representing distinct syllables rather than words were added to expand cuneiform’s range. 
+        </p>
+      </div>
+      <div class="logograms-img">
+        <img src="">
+      </div>
+    </div>
+    </div><!-- end phase-three-inner -->
+  </div>
+
+  <div id="writing-in-cuneiform">
+    <h1>Writing in Cuneiform</h1>
+    <p class="interactive-subheader">
+      When writing in Cuneiform, scribes would tilt the clay or stylus to different angles to alter the length of the imprint left in the clay. Use the buttons below to change the length and direction of your writing on the clay canvas. 
+    </p>
+    <div class="interactive-columns">
+
+      <div class="carousel">
+        <img class="carousel-slide active" src="cuneiform-assets/sumerian1.png" alt="Sumerian tablet">
+        <img class="carousel-slide"        src="cuneiform-assets/sumerian2.png" alt="Sumerian tablet">
+        <button class="carousel-btn carousel-prev">&#8249;</button>
+        <button class="carousel-btn carousel-next">&#8250;</button>
+        <div class="carousel-dots">
+          <span class="carousel-dot active"></span>
+          <span class="carousel-dot"></span>
+        </div>
+      </div>
+
+      <div class="cuneiform-interactive">
+      <div class="interactive-body">
+
+        <div class="stylus-display">
+          <div class="stylus-img-wrapper">
+            <div class="stylus-img-crop">
+              <img class="reed-stylus-img" src="cuneiform-assets/reed-stylus.svg" alt="Reed stylus">
+            </div>
+            <span class="stylus-label">Reed Stylus</span>
+          </div>
+          <div class="shape-picker">
+            <button class="shape-btn selected" data-shape="corner" title="Corner wedge">
+              <img src="cuneiform-assets/corner-wedge-cuneiform.png" alt="Corner wedge">
+            </button>
+            <button class="shape-btn" data-shape="short"  title="Short wedge">
+              <img src="cuneiform-assets/short-cuneiform-glyph.png"  alt="Short wedge">
+            </button>
+            <button class="shape-btn" data-shape="long"   title="Long wedge">
+              <img src="cuneiform-assets/long-cuneiform-glyph.png"   alt="Long wedge">
+            </button>
+          </div>
+        </div>
+
+        <div class="tablet-area">
+          <div class="tablet-actions">
+            <img id="stamp-preview" src="cuneiform-assets/corner-wedge-cuneiform.png" alt="Current stamp">
+            <button class="rotate-btn" id="rotate-ccw" title="Rotate left">↺</button>
+            <button class="rotate-btn" id="rotate-cw"  title="Rotate right">↻</button>
+            <button class="clear-btn"  id="clear-tablet">Clear</button>
+          </div>
+          <canvas id="clay-tablet"></canvas>
+        </div>
+
+      </div>
+      </div>
+
+    </div><!-- end interactive-columns -->
   </div>
 
   </div><!-- end crossfade-wrapper -->
 
   <div id="section-tag">8000BC – 3500BC</div>
+  <div id="section-tag-two">3500–3000BC</div>
+  <div id="section-tag-three">3000–2500BC</div>
 
   <script src="index.js" defer></script>
 </body>
